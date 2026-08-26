@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onam Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Floating decorative flowers (purely decorative) -->
+  <div class="floating-decor" aria-hidden="true">
+    <span class="petal petal-1">🌼</span>
+    <span class="petal petal-2">🌸</span>
+    <span class="petal petal-3">🪷</span>
+    <span class="petal petal-4">🌿</span>
+    <span class="petal petal-5">🌺</span>
+    <span class="petal petal-6">🌻</span>
+    <span class="petal petal-7">🌸</span>
+    <span class="petal petal-8">🌼</span>
+    <span class="petal petal-9">🍃</span>
+    <span class="petal petal-10">🌺</span>
+    <span class="petal petal-11">🪷</span>
+    <span class="petal petal-12">🌿</span>
+    <span class="petal petal-13">🌸</span>
+    <span class="petal petal-14">🌼</span>
+  </div>
+
+  <!-- Site header -->
+  <header class="site-header">
+    <h1 class="site-title">🌼 <span class="title-text">Onam Quiz</span> 🌼</h1>
+  </header>
+
+  <main class="container">
+
+    <!-- ===== SCREEN 1: WELCOME ===== -->
+    <section id="start-screen" class="card screen">
+      <!-- Pookalam decoration built entirely with CSS circles -->
+      <div class="pookalam" aria-hidden="true">
+        <div class="pookalam-ring ring-1"></div>
+        <div class="pookalam-ring ring-2"></div>
+        <div class="pookalam-ring ring-3"></div>
+        <div class="pookalam-center">🌼</div>
+      </div>
+
+      <h2 class="screen-title">Onam Quiz</h2>
+      <p class="subtitle">How well do you know Kerala's festival of joy?</p>
+      <p class="description">
+        Test your knowledge of Onam traditions, food, legends and celebrations.
+      </p>
+
+      <button id="start-btn" class="btn btn-primary btn-large" type="button">
+        Start Quiz
+      </button>
+    </section>
+
+    <!-- ===== SCREEN 2: QUIZ ===== -->
+    <section id="quiz-screen" class="card screen hidden">
+      <!-- Progress area -->
+      <div class="progress-info">
+        <span id="question-counter" class="question-counter">Question 1 of 10</span>
+        <span id="progress-percent" class="progress-percent">10%</span>
+      </div>
+
+      <div
+        class="progress-bar"
+        role="progressbar"
+        aria-label="Quiz progress"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="10"
+        id="progress-bar"
+      >
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+
+      <!-- Question -->
+      <h2 id="question-text" class="question-text">Question goes here</h2>
+
+      <!-- Answer buttons are created by JavaScript -->
+      <div id="options-list" class="options-list"></div>
+
+      <!-- Feedback message -->
+      <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+
+      <!-- Arrow navigation: back is always available, forward unlocks after answering -->
+      <div class="quiz-nav">
+        <button
+          id="prev-btn"
+          class="btn btn-secondary btn-nav"
+          type="button"
+          aria-label="Previous question"
+        >
+          <span class="nav-arrow" aria-hidden="true">←</span>
+          <span>Previous</span>
+        </button>
+
+        <button id="next-btn" class="btn btn-nav hidden" type="button">
+          <span id="next-label">Next</span>
+          <span class="nav-arrow" aria-hidden="true">→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ===== SCREEN 3: RESULTS ===== -->
+    <section id="result-screen" class="card screen hidden">
+      <h2 class="screen-title">Quiz Complete! 🎉</h2>
+      <p class="result-label">You scored</p>
+
+      <!-- Score ring: the gold arc is filled from JavaScript -->
+      <div id="score-ring" class="score-ring">
+        <div class="score-ring-inner">
+          <p id="final-score" class="final-score">0 / 10</p>
+          <p id="final-percent" class="final-percent">0%</p>
+        </div>
+      </div>
+
+      <p id="result-message" class="result-message"></p>
+
+      <!-- Answers stay hidden until this button is clicked -->
+      <button
+        id="show-answers-btn"
+        class="btn btn-secondary"
+        type="button"
+        aria-expanded="false"
+        aria-controls="review"
+      >
+        Show Answers
+      </button>
+
+      <!-- Full answer review, built by JavaScript -->
+      <section id="review" class="review hidden">
+        <h3 class="review-title">🌿 Review All Answers 🌿</h3>
+        <ol id="review-list" class="review-list"></ol>
+      </section>
+
+      <button id="restart-btn" class="btn btn-primary btn-large" type="button">
+        Play Again
+      </button>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>🌿 Happy Onam 🌿</p>
+  </footer>
+
+  <!-- Celebration petals appear here on the results screen -->
+  <div id="celebration" class="celebration" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
